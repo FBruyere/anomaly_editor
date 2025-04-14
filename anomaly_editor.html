@@ -1,3 +1,14 @@
+<?php
+// Récupère la variable POST 'base_url' et lit le fichier CSV s'il existe.
+$base_url = "";
+$csvContent = "";
+if (isset($_POST['base_url'])) {
+    $base_url = $_POST['base_url'];
+    if (file_exists($base_url)) {
+        $csvContent = file_get_contents($base_url);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
